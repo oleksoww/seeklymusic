@@ -7,17 +7,24 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Panel Twórcy</h1>
-<p id="welcome"></p>
+<header>
+    <h1>Panel Twórcy</h1>
+    <button onclick="logout()">Wyloguj</button>
+</header>
 
-<h2>Dodaj utwór</h2>
-<input type="text" id="trackTitle" placeholder="Tytuł"><br>
-<input type="text" id="trackAuthor" placeholder="Autor"><br>
-<input type="file" id="trackFile" accept=".mp3,.mp4,.wav"><br>
-<button onclick="addTrack()">Dodaj</button>
+<div class="card">
+    <p id="welcome"></p>
+    <h2>Dodaj utwór</h2>
+    <input type="text" id="trackTitle" placeholder="Tytuł utworu"><br>
+    <input type="text" id="trackAuthor" placeholder="Autor"><br>
+    <input type="file" id="trackFile" accept=".mp3,.mp4,.wav"><br>
+    <button onclick="addTrack()">Dodaj</button>
+</div>
 
-<h2>Twoje utwory</h2>
-<div id="creatorTracks"></div>
+<div class="card">
+    <h2>Twoje utwory</h2>
+    <div id="creatorTracks"></div>
+</div>
 
 <script src="script.js"></script>
 <script>
@@ -28,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index.html';
         return;
     }
-    document.getElementById('welcome').innerText = `Witaj, ${user.email}`;
+    document.getElementById('welcome').innerText = `Witaj, ${user.displayName}`;
     renderCreatorTracks();
 });
 </script>
