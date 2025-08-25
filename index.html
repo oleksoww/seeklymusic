@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SeeklyMusic</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <header>
@@ -12,9 +13,9 @@
     <div id="userPanel" style="display:none;">
         <img id="profilePicHeader" src="default.png" class="profile-img" onclick="toggleProfileEdit()">
         <span id="displayNameHeader"></span>
-        <button onclick="logout()">Wyloguj</button>
+        <button onclick="logout()"><i class="fas fa-right-from-bracket"></i> Wyloguj</button>
     </div>
-    <button id="loginBtn" onclick="showLogin()">Zaloguj / Zarejestruj</button>
+    <button id="loginBtn" onclick="showLogin()"><i class="fas fa-user"></i> Zaloguj / Zarejestruj</button>
 </header>
 
 <div id="loginForm" class="card">
@@ -26,8 +27,8 @@
         <option value="user">Nie-twórca</option>
         <option value="creator">Twórca</option>
     </select><br>
-    <button onclick="register()">Zarejestruj</button>
-    <button onclick="login()">Zaloguj</button>
+    <button onclick="register()"><i class="fas fa-user-plus"></i> Zarejestruj</button>
+    <button onclick="login()"><i class="fas fa-right-to-bracket"></i> Zaloguj</button>
     <p id="msg"></p>
 </div>
 
@@ -35,7 +36,7 @@
     <h2>Edytuj profil</h2>
     <input type="text" id="displayNameInput" placeholder="Nazwa wyświetlana"><br>
     <input type="file" id="profileFile" accept="image/*"><br>
-    <button onclick="updateProfile()">Zapisz zmiany</button>
+    <button onclick="updateProfile()"><i class="fas fa-save"></i> Zapisz zmiany</button>
 </div>
 
 <div id="publishForm" class="card" style="display:none;">
@@ -44,7 +45,7 @@
     <input type="text" id="trackAuthor" placeholder="Autor"><br>
     <input type="file" id="trackFile" accept=".mp3,.mp4,.wav"><br>
     <input type="file" id="trackCover" accept="image/*"><br>
-    <button onclick="publishTrack()">Opublikuj</button>
+    <button onclick="publishTrack()"><i class="fas fa-upload"></i> Opublikuj</button>
 </div>
 
 <div class="card">
@@ -53,9 +54,6 @@
 </div>
 
 <div id="tracks" class="track-list"></div>
-
-<div id="mixPlayer" class="card"></div>
-<button id="mixBtn" onclick="mixTracks()">Mixuj wybrane utwory</button>
 
 <script src="script.js"></script>
 <script>
