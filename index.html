@@ -10,7 +10,7 @@
 <header>
     <h1>SeeklyMusic</h1>
     <div id="userPanel" style="display:none;">
-        <img id="profilePicHeader" src="default.png" class="profile-img">
+        <img id="profilePicHeader" src="default.png" class="profile-img" onclick="toggleProfileEdit()">
         <span id="displayNameHeader"></span>
         <button onclick="logout()">Wyloguj</button>
     </div>
@@ -27,34 +27,3 @@
         <option value="creator">Twórca</option>
     </select><br>
     <button onclick="register()">Zarejestruj</button>
-    <button onclick="login()">Zaloguj</button>
-    <p id="msg"></p>
-</div>
-
-<!-- Panel publikacji tylko dla twórcy -->
-<div id="publishForm" class="card" style="display:none;">
-    <h2>Opublikuj utwór</h2>
-    <input type="text" id="trackTitle" placeholder="Tytuł utworu"><br>
-    <input type="text" id="trackAuthor" placeholder="Autor"><br>
-    <input type="file" id="trackFile" accept=".mp3,.mp4,.wav"><br>
-    <input type="file" id="trackCover" accept="image/*"><br>
-    <button onclick="publishTrack()">Opublikuj</button>
-</div>
-
-<div class="card">
-    <h2>Wyszukaj utwory</h2>
-    <input type="text" id="search" placeholder="Szukaj..." onkeyup="renderTracks()">
-</div>
-
-<div id="tracks" class="track-list"></div>
-
-<script src="script.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    checkLogin();
-    renderTracks();
-});
-</script>
-</body>
-</html>
-
