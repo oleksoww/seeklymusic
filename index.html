@@ -17,7 +17,7 @@
     <button id="loginBtn" onclick="showLogin()">Zaloguj / Zarejestruj</button>
 </header>
 
-<div id="loginForm" class="card" style="display:none;">
+<div id="loginForm" class="card">
     <h2>Logowanie / Rejestracja</h2>
     <input type="email" id="email" placeholder="Email"><br>
     <input type="password" id="password" placeholder="Hasło"><br>
@@ -27,3 +27,42 @@
         <option value="creator">Twórca</option>
     </select><br>
     <button onclick="register()">Zarejestruj</button>
+    <button onclick="login()">Zaloguj</button>
+    <p id="msg"></p>
+</div>
+
+<div id="profileEdit" class="card" style="display:none;">
+    <h2>Edytuj profil</h2>
+    <input type="text" id="displayNameInput" placeholder="Nazwa wyświetlana"><br>
+    <input type="file" id="profileFile" accept="image/*"><br>
+    <button onclick="updateProfile()">Zapisz zmiany</button>
+</div>
+
+<div id="publishForm" class="card" style="display:none;">
+    <h2>Opublikuj utwór</h2>
+    <input type="text" id="trackTitle" placeholder="Tytuł utworu"><br>
+    <input type="text" id="trackAuthor" placeholder="Autor"><br>
+    <input type="file" id="trackFile" accept=".mp3,.mp4,.wav"><br>
+    <input type="file" id="trackCover" accept="image/*"><br>
+    <button onclick="publishTrack()">Opublikuj</button>
+</div>
+
+<div class="card">
+    <h2>Wyszukaj utwory</h2>
+    <input type="text" id="search" placeholder="Szukaj..." onkeyup="renderTracks()">
+</div>
+
+<div id="tracks" class="track-list"></div>
+
+<div id="mixPlayer" class="card"></div>
+<button id="mixBtn" onclick="mixTracks()">Mixuj wybrane utwory</button>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    checkLogin();
+    renderTracks();
+});
+</script>
+</body>
+</html>
