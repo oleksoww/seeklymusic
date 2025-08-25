@@ -108,37 +108,5 @@ function renderTracks(){
     getTracks().forEach((t,i)=>{
         if(t.title.toLowerCase().includes(query) || t.author.toLowerCase().includes(query)){
             const div=document.createElement('div'); div.className='track';
-            div.dataset.index=i;
-            div.innerHTML=`<input type="checkbox" class="mixCheckbox">
-                <img src="${t.cover}" width="100"><br>
-                <strong onclick="playTrack(${i})" style="cursor:pointer;">${t.title}</strong> - ${t.author}`;
-            container.appendChild(div);
-        }
-    });
-}
+            div
 
-// ===== Odtwarzanie utworu =====
-let currentAudio = null;
-function playTrack(index){
-    const track = getTracks()[index];
-    if(currentAudio){ currentAudio.pause(); }
-    currentAudio = new Audio(track.file);
-    currentAudio.play();
-}
-
-// ===== Mix dwóch utworów =====
-function mixTracks(){
-    const checkboxes = document.querySelectorAll('.mixCheckbox');
-    const selectedTracks = [];
-    checkboxes.forEach((cb, i) => {
-        if(cb.checked) selectedTracks.push(getTracks()[i]);
-    });
-    if(selectedTracks.length !== 2){ alert("Wybierz dokładnie dwa utwory do mixowania"); return; }
-
-    const container = document.getElementById('mixPlayer');
-    container.innerHTML = `
-        <h3>Mix: ${selectedTracks[0].title} + ${selectedTracks[1].title}</h3>
-        <audio controls autoplay src="${selectedTracks[0].file}"></audio>
-        <audio controls autoplay src="${selectedTracks[1].file}"></audio>
-    `;
-}
