@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;  /* czarne tło */
+    background-color: #121212;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -10,14 +10,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1f1f1f;  /* ciemny nagłówek */
+    background-color: #1f1f1f;
     padding: 10px 20px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
 button {
-    background-color: #0066FF; /* niebieski przycisk */
+    background-color: #0066FF;
     border: none;
     padding: 10px 15px;
     color: #fff;
@@ -26,7 +26,7 @@ button {
 }
 
 button:hover {
-    background-color: #0052CC; /* ciemniejszy niebieski przy hover */
+    background-color: #0052CC;
 }
 
 input, select {
@@ -37,23 +37,23 @@ input, select {
 }
 
 .card {
-    background-color: #1f1f1f;  /* ciemna karta */
+    background-color: #1f1f1f;
     padding: 15px;
     margin: 15px auto;
     border-radius: 10px;
     max-width: 500px;
 }
 
-.track-list .track, #creatorTracks .track {
-    border: 1px solid #0066FF;  /* obramowanie niebieskie */
+.track-list .track {
+    border: 1px solid #0066FF;
     margin: 10px 0;
     padding: 10px;
     border-radius: 10px;
 }
 
-.track audio {
-    width: 90%;
-    margin-top: 5px;
+.track img {
+    display: block;
+    margin: 0 auto 5px;
 }
 
 .profile-img {
@@ -61,6 +61,13 @@ input, select {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #0066FF;  /* niebieska ramka profilu */
+    border: 3px solid #0066FF;
     margin-bottom: 10px;
 }
+
+#mixPlayer audio {
+    width: 90%;
+    display: block;
+    margin: 5px auto;
+}
+
