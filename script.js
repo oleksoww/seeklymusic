@@ -108,4 +108,23 @@ function renderTracks(){
     getTracks().forEach((t,i)=>{
         if(t.title.toLowerCase().includes(query) || t.author.toLowerCase().includes(query)){
             const div=document.createElement('div'); div.className='track';
-            div
+            div.innerHTML=`
+                <img src="${t.cover}" width="100" class="track-cover">
+                <div class="track-info">
+                    <strong>${t.title}</strong><br>
+                    <span>${t.author}</span><br>
+                    <button onclick="playTrack(${i})"><i class="fas fa-play"></i> Odtwórz</button>
+                </div>`;
+            container.appendChild(div);
+        }
+    });
+}
+
+// ===== Odtwarzanie utworu =====
+let currentAudio = null;
+function playTrack(index){
+    const track = getTracks()[index];
+    if(currentAudio){ currentAudio.pause(); }
+    currentAudio = new Audio(track.file);
+    currentAudio.play();
+}
