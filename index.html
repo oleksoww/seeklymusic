@@ -7,14 +7,16 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>SeeklyMusic</h1>
+<header>
+    <h1>SeeklyMusic</h1>
+    <button onclick="showLogin()">Zaloguj / Zarejestruj</button>
+</header>
 
-<button onclick="showLogin()">Zaloguj się / Zarejestruj</button>
-
-<div id="loginForm" style="display:none;">
-    <h2>Rejestracja / Logowanie</h2>
+<div id="loginForm" class="card" style="display:none;">
+    <h2>Logowanie / Rejestracja</h2>
     <input type="email" id="email" placeholder="Email"><br>
     <input type="password" id="password" placeholder="Hasło"><br>
+    <input type="text" id="displayName" placeholder="Nazwa wyświetlana"><br>
     <select id="role">
         <option value="user">Nie-twórca</option>
         <option value="creator">Twórca</option>
@@ -24,9 +26,12 @@
     <p id="msg"></p>
 </div>
 
-<h2>Lista utworów</h2>
-<input type="text" id="search" placeholder="Szukaj utworu" onkeyup="renderTracks()">
-<div id="tracks"></div>
+<div class="card">
+    <h2>Wyszukaj utwory</h2>
+    <input type="text" id="search" placeholder="Szukaj..." onkeyup="renderTracks()">
+</div>
+
+<div id="tracks" class="track-list"></div>
 
 <script src="script.js"></script>
 <script>
