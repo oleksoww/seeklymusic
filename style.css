@@ -19,7 +19,7 @@ header {
 button {
     background-color: #0066FF;
     border: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -34,6 +34,7 @@ input, select {
     padding: 8px;
     border-radius: 5px;
     border: none;
+    width: 90%;
 }
 
 .card {
@@ -42,32 +43,19 @@ input, select {
     margin: 15px auto;
     border-radius: 10px;
     max-width: 500px;
+    text-align: left;
 }
 
-.track-list .track {
+.track-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.track {
+    background-color: #1f1f1f;
     border: 1px solid #0066FF;
-    margin: 10px 0;
-    padding: 10px;
     border-radius: 10px;
-}
-
-.track img {
-    display: block;
-    margin: 0 auto 5px;
-}
-
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #0066FF;
-    margin-bottom: 10px;
-}
-
-#mixPlayer audio {
-    width: 90%;
-    display: block;
-    margin: 5px auto;
-}
+    width: 220px;
+    margi
 
