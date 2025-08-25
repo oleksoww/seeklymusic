@@ -109,4 +109,3 @@ function renderTracks(){
         if(t.title.toLowerCase().includes(query) || t.author.toLowerCase().includes(query)){
             const div=document.createElement('div'); div.className='track';
             div
-
