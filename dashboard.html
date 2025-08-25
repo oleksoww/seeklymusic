@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeeklyMusic - Panel Twórcy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Panel Twórcy</h1>
+<p id="welcome"></p>
+
+<h2>Dodaj utwór</h2>
+<input type="text" id="trackTitle" placeholder="Tytuł"><br>
+<input type="text" id="trackAuthor" placeholder="Autor"><br>
+<input type="file" id="trackFile" accept=".mp3,.mp4,.wav"><br>
+<button onclick="addTrack()">Dodaj</button>
+
+<h2>Twoje utwory</h2>
+<div id="creatorTracks"></div>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if(!user || user.role !== 'creator') {
+        alert('Brak dostępu! Zaloguj się jako Twórca.');
+        window.location.href = 'index.html';
+        return;
+    }
+    document.getElementById('welcome').innerText = `Witaj, ${user.email}`;
+    renderCreatorTracks();
+});
+</script>
+</body>
+</html>
